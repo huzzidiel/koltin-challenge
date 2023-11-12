@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Author extends Model
 {
     use HasFactory;
-    protected $fillable = ['bio', 'created_at'];
+    protected $fillable = ['user_id', 'bio', 'created_at'];
 
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);

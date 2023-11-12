@@ -2,6 +2,10 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
+        <div class="text-2xl mb-10">
+            To write a post first register as a new user
+        </div>
+
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />

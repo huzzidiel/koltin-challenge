@@ -1,10 +1,12 @@
 <x-app-layout>
     <div class="py-10">
-        <div class="flex justify-center">
-            <h2 class="text-4xl">Welcome to the post community</h2>
-        </div>
         <div class="container mx-auto mt-10">
-            <div class="grid grid-cols-12 gap-6">
+            <div class="flex justify-between">
+                <h2 class="text-4xl">Welcome to the post community</h2>
+                <x-cta url="/login" content="Write a post"></x-cta>
+            </div>
+            <div class="mt-10">
+                <div class="grid grid-cols-12 gap-6">
                 @foreach($posts as $post)
                     <div class="col-span-12 md:col-span-6 lg:col-span-4 border-2">
                     <a class="block group" href="{{ route('post.show', $post->id) }}">
@@ -34,6 +36,7 @@
                     </a>
                 </div>
                 @endforeach
+            </div>
             </div>
         </div>
     </div>
