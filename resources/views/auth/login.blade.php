@@ -2,6 +2,10 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <div class="text-2xl mb-10">
+        To write a post first login in or <a class="text-blue-500" href="/register">register</a>
+    </div>
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
