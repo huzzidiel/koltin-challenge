@@ -1,8 +1,8 @@
 <form method="post"
-      action="{{ route('comment.store') }}"
+      action="{{ $url }}"
       class="w-full sm:max-w-2xl">
     @csrf
-    <input type="hidden" name="post_id" value="{{ $post->id }}">
+    <input type="hidden" name="{{ $hidden['name'] }}" value="{{ $hidden['value'] }}">
     <div class="mt-10">
         <h3 class="text-xl">White your comment</h3>
         <label for="large-input" class="block mb-2 text-sm font-medium">Nickname</label>
@@ -47,6 +47,7 @@
         @enderror
     </div>
     <div class="mt-2 flex justify-end">
+        <x-cta :url="'/'" content="Back to post"></x-cta>
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Publish comment</button>
     </div>
 </form>

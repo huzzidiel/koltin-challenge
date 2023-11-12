@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class AuthorComments extends Model
 {
     use HasFactory;
-    protected $fillable = ['nickname', 'x_twitter', 'comment'];
+    protected $fillable = ['author_id', 'nickname', 'x_twitter', 'comment'];
 
     public function author(): BelongsTo {
         return $this->belongsTo(Author::class);
