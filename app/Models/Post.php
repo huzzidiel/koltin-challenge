@@ -14,7 +14,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'content', 'author_id'];
+    protected $fillable = ['post_id', 'title', 'content', 'author_id'];
 
     public function author(): BelongsTo
     {
@@ -23,7 +23,7 @@ class Post extends Model
 
     public function comments(): HasMany
     {
-        return $this->hasMany(PostComment::class);
+        return $this->hasMany(PostComments::class);
     }
 
     protected function createdAt(): Attribute

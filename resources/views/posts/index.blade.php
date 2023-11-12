@@ -7,7 +7,7 @@
             <div class="grid grid-cols-12 gap-6">
                 @foreach($posts as $post)
                     <div class="col-span-12 md:col-span-6 lg:col-span-4 border-2">
-                    <a class="block group" href="">
+                    <a class="block group" href="{{ route('post.show', $post->id) }}">
                         <div
                             class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal transition group-hover:scale-105">
                             <div class="mb-8">
@@ -24,7 +24,7 @@
                             </div>
                             <div class="flex items-center">
                                 <img class="w-10 h-10 rounded-full mr-4" src="https://ui-avatars.com/api/?name={{ $post->author->user->name }}"
-                                     alt="Avatar of Jonathan Reinink">
+                                     alt="Avatar of {{ $post->author->user->name }}">
                                 <div class="text-sm">
                                     <p class="text-gray-900 leading-none"> {{ $post->author->user->name }}</p>
                                     <p class="text-gray-600"> {{ $post->created_at }}</p>
