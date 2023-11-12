@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Post extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['title', 'content', 'author_id'];
 
     public function author(): BelongsTo {
         return $this->belongsTo(Author::class);
