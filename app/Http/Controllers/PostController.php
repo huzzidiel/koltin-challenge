@@ -8,10 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    public function store(PostRequest $request) {
+    public function store(PostRequest $request)
+    {
         $post = $request->all();
         $post['author_id'] = Auth::user()->author->id;
         Post::create($post);
         return redirect(route('dashboard'));
+    }
+
+    public function index()
+    {
+        $posts = Post::orderBy('updated_at', 'desc')->get();
+        return view('posts.index', ['posts' => $posts]);
     }
 }
