@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthorCommentsController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -18,8 +20,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PostController::class, 'index']);
+
 Route::get('/post/show/{post}', [PostController::class, 'show'])->name('post.show');
-Route::post('/comment/store', [PostCommentsController::class, 'store'])->name('comment.store');
+Route::post('/post-comments/store', [PostCommentsController::class, 'store'])->name('postComments.store');
+
+Route::get('/author/show/{author}', [AuthorController::class, 'show'])->name('author.show');
+Route::post('/author-comments/store', [AuthorCommentsController::class, 'store'])->name('authorComments.store');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {

@@ -2,15 +2,12 @@
     <div class="py-10">
         <div class="container mx-auto">
             <div class="mt-10">
-                <h2 class="uppercase text-6xl"> {{ $post->title }}</h2>
-                <p class="text-3xl">By: <a class="text-blue-500" href="{{ route('author.show', $post->author->id) }}">{{ $post->author->user->name }}</a></p>
-                <div class="mt-10 wysiwyg">
-                    {!! $post->content !!}
-                </div>
+                <h2 class="uppercase text-6xl"> {{ $author->user->name }}</h2>
+                <p class="text-3xl">Bio: {{ $author->bio }}</p>
             </div>
             <div class="mt-10">
                 <h3 class="text-2xl">Comments:</h3>
-                @foreach($post->comments as $comment)
+                @foreach($author->comments as $comment)
                     <div class="mt-2 border-t-2">
                         <div class="flex items-center">
                             <img class="w-10 h-10 rounded-full mr-4" src="https://ui-avatars.com/api/?name={{  $comment->nickname }}"
@@ -24,7 +21,7 @@
                         </div>
                     </div>
                 @endforeach
-                @include('comments.create', ['hidden' => ['name' => 'post_id', 'value' => $post->id], 'url' => route('postComments.store')])
+                @include('comments.create', ['hidden' => ['name' => 'author_id', 'value' => $author->id], 'url' => route('authorComments.store')])
             </div>
         </div>
     </div>
