@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PostController::class, 'index']);
+Route::get('/post/show/{post}', [PostController::class, 'show'])->name('post.show');
+Route::post('/comment/store', [PostCommentsController::class, 'store'])->name('comment.store');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {

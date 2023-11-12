@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .wysiwyg h2 {
+        @apply uppercase text-3xl;
+    }
+    .wysiwyg  p{
+       @apply mt-2 text-lg;
+    }
+}
