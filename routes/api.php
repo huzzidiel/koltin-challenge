@@ -23,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/users/store', [UserController::class, 'store']);
 Route::get('/posts', [PostController::class, 'index']);
+Route::post('/posts/store', [PostController::class, 'store']);
 Route::get('/authors', [AuthorController::class, 'index']);
