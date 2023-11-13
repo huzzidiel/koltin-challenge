@@ -16,7 +16,7 @@ https://docs.google.com/document/d/13lPzPkqNc-Aq5oTwruaGmSRTV7bU1pFZYuG81uLvCYg/
 
 ## Example server 
 This site should be on this domain after date(13 nov)
-www.koltinchallenge.huzzidiel.me 
+https://koltinchallenge.huzzidiel.me/
 
 
 ## Setup 
