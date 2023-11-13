@@ -27,6 +27,7 @@ composer install
 Copy `.env.example` to `.env` and configure your MySQL database, user, and password.
 ```bash
 php artisan key:generate
+php artisan migrate
 npm install
 npm run dev
 ```
